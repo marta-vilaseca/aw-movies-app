@@ -1,0 +1,10 @@
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    padding: 15px;
+    background-color: #444;
+    color: white;
+  }

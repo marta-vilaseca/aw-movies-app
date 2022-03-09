@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+@import url(./vars.css);
+@import url(./fonts.css);
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+section { 
+  padding:2rem;
+}
+
+h2 {
+  color: teal;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+
+.form {
+  font-size: 1.5rem;
+}
+
+.form input {
+  display:block;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  padding: 0 5px;
+  margin-bottom: 1rem;
+}
+
+.form button {
+  background-color: teal;
+  border: none;
+  display:block;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  line-height: 3rem;
+  padding: 0 15px;
   color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  main {
+    min-width: 500px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  main {
+    min-width: 750px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  main {
+    min-width: 960px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  main {
+    min-width: 1150px;
   }
 }

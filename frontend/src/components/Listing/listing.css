@@ -1,0 +1,42 @@
+ul.movie-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    font-size: 1.5rem;
+    margin:0;
+    padding:0;
+  }
+  
+  li.poster {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  li.poster a {
+    text-decoration:none;
+    color: teal;
+    font-weight: bold;
+  }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  ul.movie-list {    
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  ul.movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  ul.movie-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

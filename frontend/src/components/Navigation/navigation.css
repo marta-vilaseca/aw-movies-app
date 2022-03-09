@@ -1,0 +1,24 @@
+.nav-bar {
+    list-style-type: none;
+    margin:0 0 2rem;
+    padding: 0 2rem;
+    display:flex;
+    font-size: 2rem;
+}
+
+.nav-bar li {
+    margin-right: 1rem; 
+}
+
+.nav-bar li a {
+    display:block;
+    padding: 8px 15px;
+    background-color: #666;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-bar li a.active {
+    background-color: teal;
+}

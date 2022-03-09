@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'floridaprojectphaseone';
+    src: url('./assets/florida_project_phase_one-webfont.woff2') format('woff2'),
+         url('./assets/florida_project_phase_one-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'floridaprojectphasetwo';
+    src: url('./assets/florida_project_phase_two-webfont.woff2') format('woff2'),
+         url('./assets/florida_project_phase_two-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

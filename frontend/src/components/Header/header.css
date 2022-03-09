@@ -1,0 +1,23 @@
+.app-header {
+    display: none;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding:2rem;
+  }
+  
+  .app-logo {
+    width: 20rem;
+    height: auto;
+    margin: 2rem;
+  }
+
+header img {filter: invert(100%) sepia(38%) saturate(250%) hue-rotate(206deg) brightness(115%) contrast(87%);}
+  
+  h1 {
+    font-size: 8rem;
+    font-family: 'floridaprojectphasetwo';
+    font-weight:600;
+    text-transform:uppercase;
+  }

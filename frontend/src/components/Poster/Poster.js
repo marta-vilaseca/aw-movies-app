@@ -1,21 +1,26 @@
+import {
+  Link
+} from 'react-router-dom';
 import './poster.css';
-// import Tag from '../Tag/Tag'
+import Tag from '../Tag/Tag';
+import Rating from '../Rating/Rating';
+import Favorite from '../Favorite/Favorite';
 
 function Poster({ poster }) {
   return (
-    <div className="poster">
-      <div class="poster__content">
+    <li className="poster">
+        <Favorite movie={poster}></Favorite>
         <img src={poster.image} className="poster__image" alt="logo" />
-        <a href="" className="poster__title">{poster.title}</a>
-        <a href="" className="poster__director">{poster.director}</a>
-        <p className="poster__rate">{poster.rate}</p>
-      </div>
-      {/* <div className="poster__categories">
+        <Link to="#" activeClassName="active" className="poster__title">{poster.title}</Link>
+        {poster.director}, {poster.year}
+        <Rating rating={poster.rate}></Rating>
+        
+      <div className="poster__categories">
         {poster.categories.map((category) => (
           <Tag key={category} item={category}></Tag>
         ))}
-      </div> */}
-    </div>
+      </div>
+    </li>
   );
 }
 
