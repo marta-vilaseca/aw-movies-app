@@ -9,12 +9,12 @@ ul.movie-list {
     padding:0;
   }
   
-  li.poster {
+  li.moviecard {
     display: flex;
     flex-direction: column;
   }
   
-  li.poster a {
+  li.moviecard a {
     text-decoration:none;
     color: teal;
     font-weight: bold;

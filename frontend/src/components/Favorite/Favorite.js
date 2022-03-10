@@ -1,26 +1,19 @@
-import { useState } from "react";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './favorite.css';
 
-function Favorite(movie) {
-    const [isActive, setActive] = useState("false");
-    const favoriteMovies = [];
-
-    const handleToggle = () => {
-        setActive(!isActive);
-        if(isActive && !(favoriteMovies.includes(movie))) {
-            favoriteMovies.push(movie);
-        }
-        if (!isActive) {
-            // TODO: find in favoriteMovies and delete it
-        }
-        console.log(favoriteMovies);
-    };
+function Favorite(title, id, addToFavoriteMovies) {
+    // const [isActive, setActive] = useState("false");
+    // Hooks
+	const location = useLocation();
     
     return (
         <div class="ribbon ribbon-top-left">
-            <span className={isActive ? "" : "favMovie"} >
-                <button onClick={handleToggle} className={isActive ? "favButton" : "favButton favMovie"} title={movie.title}></button>
+            {location.pathname !== '/favorites' && (
+            <span>
+                <p onClick={() => addToFavoriteMovies(id)} className="favButton" title={title}></p>
             </span>
+            )}
         </div>
     );
 }

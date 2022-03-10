@@ -5,18 +5,6 @@ export const AuthenticationContext = React.createContext();
 const AuthenticationProvider = ({ children }) => {
 	const [authData, setAuthData] = useState({});
 
-	useEffect(() => {
-		getLoggedUser();
-	}, []);
-
-	const login = data => {
-		setAuthData({ data });
-	};
-
-	const logout = () => {
-		setAuthData('');
-	};
-
 	async function getLoggedUser() {
 		const response = await fetch(`/api/auth/getuser`, {
 			method: 'GET',
@@ -33,6 +21,18 @@ const AuthenticationProvider = ({ children }) => {
 			return null;
 		}
 	}
+
+	useEffect(() => {
+		getLoggedUser();
+	}, []);
+
+	const login = data => {
+		setAuthData({ data });
+	};
+
+	const logout = () => {
+		setAuthData('');
+	};
 
 	const value = {
 		authData,

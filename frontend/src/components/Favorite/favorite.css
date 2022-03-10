@@ -28,6 +28,10 @@
   .ribbon span.favMovie {
       background-color: gold;
   }
+
+  span p {
+    display:inline;
+  }
   
   /* top left*/
   .ribbon-top-left {

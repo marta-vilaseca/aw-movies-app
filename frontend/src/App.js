@@ -1,22 +1,18 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from 'react-router-dom';
+import React from 'react';
 
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import Header from './components/Header/Header';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 
 import Home from './pages/Home';
-import Movies from './pages/Movies';
 import Favorites from './pages/Favorites';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 
-import UserInfo from "./UserInfo";
 import AuthenticationProvider from "./AuthProvider";
 import RequireAuth from "./RequireAuth";
 
@@ -29,7 +25,6 @@ function App() {
           <Navigation />
           <Routes>
            <Route path="/" element={<Home />} />
-           <Route path="/allmovies" element={<Movies />} />
            <Route path="/login" element={<Login />} />  
            <Route path="/register" element={<Register />} /> 
            <Route

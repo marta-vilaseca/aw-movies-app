@@ -1,46 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import Listing from '../components/Listing/Listing';
-import Pagination from '../components/Pagination/Pagination';
 
 const Favorites = () => {
-    //const location = useLocation();
-    const [movies, setMovies] = useState([]);
+    const [favMovies, setFavMovies] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [moviesPerPage] = useState(10);
-    // const [filterMovies, setFilterMovies] = useState([]);
+    
+    // FAVORITES: fetching
+    function fetchFavMovies() {
+        fetch('/api/user/favorites', {
+            method: 'GET',
+            credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                setFavMovies(data.favorites);
+            });
+    }
 
-    // Fetching movies
-        function fetchMovies() {
-            setLoading(true);
-            fetch('/api/movies')
-                .then(response => response.json())
-                .then(data => {
-                    setMovies(data.movies);
-                    setLoading(false);
-                    // setFilterMovies(data.movies);
-                });
-        }
+    useEffect(() => {
+        fetchFavMovies();
+    }, []);
 
-        useEffect(() => {
-            fetchMovies();
-        }, []);
-
-    // get current movie
-    const indexOfLastMovie = currentPage * moviesPerPage;
-    const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
-    const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
-    console.log(currentMovies);
-
-    // Change page
-    const paginate = pageNumber => setCurrentPage(pageNumber);
+    console.table(favMovies);
     
     return (
         <section>
             <h2>Favorites</h2>
-            <Pagination moviesPerPage={moviesPerPage} totalMovies={movies.length} paginate={paginate} currentPage={currentPage} />
-            <Listing movies={currentMovies} loading={loading}></Listing>
-            <Pagination moviesPerPage={moviesPerPage} totalMovies={movies.length} paginate={paginate} currentPage={currentPage} />
+            <Listing movies={favMovies} loading={loading}></Listing>
         </section>
     );
 };

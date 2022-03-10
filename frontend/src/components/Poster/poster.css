@@ -1,69 +1,69 @@
-.poster {
-    position: relative;
+.debug {
+    border:1px solid red;
+}
+.debug2 {
+    border:1px solid green;
+}
+.debug3 {
+    border:1px solid blueviolet;
 }
 
-.poster__image {
-    width: 100%;
-    object-fit: cover;
-}
 
-
-/* 
-div.poster_rating
-    p.poster_num-rating
-    div.poster_star-rating
-        ul.icons-full
-        ul.icons-empty */
-
-.poster_rating {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.poster_num-rating {
-    display: inline-block;
-    flex-grow:0;
-}
-.poster_star-rating {
-    display: inline-block;
-    flex-grow: 1;
-    position:relative;
-    text-align:right;
-}
-
-.stars-off {
-    position: relative;
-    display: inline-block;
-}
-
-.stars-on {
+.ribbon {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
     position: absolute;
+  }
+  .ribbon span {
+    position: absolute;
+    display: block;
+    width: 160px;
+    padding: 4px 0;
+    background-color: rgba(151, 151, 151, 0.5);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    text-align:center;
+  }
+
+  .favorite .ribbon span {
+      background-color: gold;
+  }
+
+  span p {
+    display:inline;
+  }
+  
+  /* top left*/
+  .ribbon-top-left {
     top: 0;
     left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
+  }
+  .ribbon-top-left span {
+    right: 0;
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+.favButton {
+    width:3rem;
+    height: 3rem;
+    background:transparent;
+    border-radius: 50%;
+    border:none;
+    z-index:100;
+    cursor: pointer;
 }
 
-.stars-off::before {
-    /* NO content: "\e131\00a0\e131\00a0\e131\00a0\e131\00a0\e131"; */
-    /* content: "\f145\00a0\f145\00a0\f145\00a0\f145\00a0\f145"; */
-    content: "\f111\00a0\f111\00a0\f111\00a0\f111\00a0\f111";
+.favButton::before {
+    content: "\f005";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    /* font-size:2.5rem; */
     font-size:2rem;
-    color: #333;
+    color: #111;
+    /* text-shadow: -1px -1px 0px #111, 1px 1px 0px #111, 1px -1px 0px #111, -1px 1px 0px #111; */
 }
 
-.stars-on::before {
-    content: "\f111\00a0\f111\00a0\f111\00a0\f111\00a0\f111";
-    font-family: "Font Awesome 5 Free";
-    font-style: 'Regular';
+.favorite .favButton::before {
     font-weight: 900;
-    font-size:2rem;
-    color: goldenrod;
-    -webkit-mask-image: url("../../images/grit.png");
-    mask-image: url("../../images/grit.png");
+    color: tomato;
 }

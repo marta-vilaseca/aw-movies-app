@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 3rem;
+    margin: 2rem 0;
 }
 
 .page-item {
@@ -9,13 +11,21 @@
     margin: 0 5px;
 }
 
-.page-item a {
-    color: white;
+.page-item span {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: white;
+    color: #111;
     text-decoration: none;
+    text-align: center;
     font-size: 1.6rem;
+    line-height: 3rem;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.current a {
-    color: yellow;
+.current span {
+    background-color: yellow;
 }

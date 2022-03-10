@@ -1,16 +1,20 @@
 import './listing.css';
-import Poster from '../Poster/Poster';
+import MovieFile from '../MovieFile/MovieFile';
 
-function Listing({ movies, loading }) {
-    if(loading) {
-      return '<h2>loading...</h2>';
-    }
+function Listing({ movies, favMovies, loading, addToFavoriteMovies }) {
     return (
-        <ul className="movie-list">
-          {movies.map(movie => (
-            <Poster key={movie.title} poster={movie}></Poster>
-          ))}
-        </ul>
+        <div className={loading ? 'loader' : 'movieGrid'}>
+          <ul className="movie-list">
+            {movies.map(movie => (
+              <MovieFile 
+                key={movie.title} 
+                movie={movie} 
+                addToFavoriteMovies={addToFavoriteMovies}
+                favMovies={favMovies}
+              ></MovieFile>
+            ))}
+          </ul>
+        </div>
     );
 }
 

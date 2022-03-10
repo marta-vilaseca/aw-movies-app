@@ -3,7 +3,7 @@ import './pagination.css';
 
 const Pagination = ({ moviesPerPage, totalMovies, paginate, currentPage }) => {
   const pageNumbers = [];
-  console.log(currentPage);
+  // console.log(currentPage);
 
   for (let i = 1; i <= Math.ceil(totalMovies / moviesPerPage); i++) {
     pageNumbers.push(i);
@@ -14,9 +14,7 @@ const Pagination = ({ moviesPerPage, totalMovies, paginate, currentPage }) => {
       <ul className='pagination'>
         {pageNumbers.map(number => (
           <li key={number} className={ (currentPage === number) ? 'page-item current' : 'page-item'}>
-            <a onClick={() => paginate(number)} href='#!' className='page-link'>
-              {number}
-            </a>
+            <span onClick={() => paginate(number)} className='page-link'>{number}</span>
           </li>
         ))}
       </ul>

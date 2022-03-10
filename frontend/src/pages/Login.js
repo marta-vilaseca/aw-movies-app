@@ -3,6 +3,7 @@ import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useAuthentication } from '../AuthProvider';
 
 export default function Login() {
+
 	// State
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -41,8 +42,6 @@ export default function Login() {
 
 			body: JSON.stringify(data),
 		});
-
-		console.log(response);
 
 		if (response.status === 200) {
 			login({ email: data.email });

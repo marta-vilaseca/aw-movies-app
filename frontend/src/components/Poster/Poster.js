@@ -1,27 +1,21 @@
-import {
-  Link
-} from 'react-router-dom';
 import './poster.css';
-import Tag from '../Tag/Tag';
-import Rating from '../Rating/Rating';
-import Favorite from '../Favorite/Favorite';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-function Poster({ poster }) {
+export default function Poster({id, image, title, addToFavoriteMovies }) {
+  // Hooks
+	const location = useLocation();
+
   return (
-    <li className="poster">
-        <Favorite movie={poster}></Favorite>
-        <img src={poster.image} className="poster__image" alt="logo" />
-        <Link to="#" activeClassName="active" className="poster__title">{poster.title}</Link>
-        {poster.director}, {poster.year}
-        <Rating rating={poster.rate}></Rating>
-        
-      <div className="poster__categories">
-        {poster.categories.map((category) => (
-          <Tag key={category} item={category}></Tag>
-        ))}
+    <div className='poster'>
+      <div onClick={() => addToFavoriteMovies(id)} className="ribbon ribbon-top-left">
+            {location.pathname !== '/favorites' && (
+            <span>
+                <p className="favButton"></p>
+            </span>
+            )}
       </div>
-    </li>
-  );
+      <img src={image} className="poster" alt={title}/>
+    </div>
+    );
 }
-
-export default Poster;
