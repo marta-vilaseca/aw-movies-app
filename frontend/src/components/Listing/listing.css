@@ -1,3 +1,5 @@
+@import url(../../vars.css);
+
 ul.movie-list {
     list-style-type: none;
     display: grid;
@@ -16,7 +18,7 @@ ul.movie-list {
   
   li.moviecard a {
     text-decoration:none;
-    color: teal;
+    color: var(--accent1);
     font-weight: bold;
   }
 

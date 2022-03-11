@@ -1,6 +1,11 @@
 :root {
     --background-color: #111;
-    --text-color: #EEE;
-    --accent-color-1: indianred;
-    --accent-color-2: gold;
+    --text-color: #F2E8CF;
+    --grey: #666;
+    --grey-darker: #303030;
+    --accent1-dark: #386641;
+    --accent1: #6A994E;
+    --accent1-light: #A7C957;
+    --accent2: #F57600;
+    --accent2-light: #FFAB5C;
 }

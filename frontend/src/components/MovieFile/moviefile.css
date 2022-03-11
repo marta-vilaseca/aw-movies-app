@@ -1,3 +1,5 @@
+@import url(../../vars.css);
+
 .moviecard {
     position: relative;
 }
@@ -10,13 +12,13 @@
 }
 
 .movieData-title {
-    color: #386641;
+    color: var(--accent1-dark);
     font-size: 1.8rem;
     line-height: 3rem;
 }
 
 .movieData-year {
-    color: #666;
+    color: var(--grey);
     font-size: 1.8rem;
     font-weight: bold;
     line-height: 3rem;

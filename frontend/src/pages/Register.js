@@ -13,17 +13,17 @@ export default function Register() {
 	const { login } = useAuthentication();
 
 	const handleInputChange = e => {
-		if (e.target.name === 'email__input') {
+		if (e.target.name === 'email-input') {
 			setInputEmail(e.target.value);
 		}
 
-		if (e.target.name === 'name__input') {
+		if (e.target.name === 'name-input') {
 			setInputName(e.target.value);
 		}
-		if (e.target.name === 'password__input') {
+		if (e.target.name === 'password-input') {
 			setInputPassword(e.target.value);
 		}
-		if (e.target.name === 'password__input2') {
+		if (e.target.name === 'password-input2') {
 			setInputPassword2(e.target.value);
 		}
 	};
@@ -53,10 +53,10 @@ export default function Register() {
 
 	return (
 	<main>
-		<div class='container__form'>
+		<div class='container-form'>
 			<form class='form'>
 				<input
-					name='name__input'
+					name='name-input'
 					type='text'
 					placeholder='name'
 					value={inputName}
@@ -64,7 +64,7 @@ export default function Register() {
 				/>
 				<input
 					type='email'
-					name='email__input'
+					name='email-input'
 					placeholder='email address'
 					value={inputEmail}
 					onChange={handleInputChange}
@@ -72,19 +72,19 @@ export default function Register() {
 				<input
 					type='password'
 					placeholder='password'
-					name='password__input'
+					name='password-input'
 					value={inputPassword}
 					onChange={handleInputChange}
 				/>
 				<input
 					type='password'
 					placeholder='confirm password'
-					name='password__input2'
+					name='password-input2'
 					value={inputPassword2}
 					onChange={handleInputChange}
 				/>
 					<button type="button" onClick={register}>create</button>
-				<p class='input__message'>
+				<p class='input-message'>
 					Already registered? <Link to='/login'> Login</Link>
 				</p>
 			</form>

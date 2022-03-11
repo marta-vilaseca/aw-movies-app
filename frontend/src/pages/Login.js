@@ -16,11 +16,11 @@ export default function Login() {
 
 	// Input Handlers
 	const handleInputChange = e => {
-		if (e.target.name === 'email__input') {
+		if (e.target.name === 'email-input') {
 			setEmail(e.target.value);
 		}
 
-		if (e.target.name === 'password__input') {
+		if (e.target.name === 'password-input') {
 			setPassword(e.target.value);
 		}
 	};
@@ -51,26 +51,26 @@ export default function Login() {
 
 	return (
 	<main>
-		<div class='container__form'>
+		<div class='container-form'>
 			<form class='form'>
 				<input
 					type='email'
 					placeholder='email'
-					className='email__input'
-					name='email__input'
+					className='email-input'
+					name='email-input'
 					value={email}
 					onChange={handleInputChange}
 				/>
 				<input
 					type='password'
 					placeholder='password'
-					name='password__input'
-					className='password__input'
+					name='password-input'
+					className='password-input'
 					value={password}
 					onChange={handleInputChange}
 				/>
 					<button type="button" onClick={handleLoginClick}>login</button>
-				<p class='input__message'>
+				<p class='input-message'>
 					Not registered?
 					<Link to='/register'> Register</Link>
 				</p>
