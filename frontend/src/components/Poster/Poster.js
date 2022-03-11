@@ -8,10 +8,10 @@ export default function Poster({id, image, title, addToFavoriteMovies }) {
 
   return (
     <div className='movieData-poster'>
-      <div onClick={() => addToFavoriteMovies(id)} className="ribbon">
+      <div className="ribbon">
             {location.pathname !== '/favorites' && (
             <p>
-                <span className="favButton"></span>
+                <span onClick={() => addToFavoriteMovies(id)} className="favButton"></span>
             </p>
             )}
       </div>

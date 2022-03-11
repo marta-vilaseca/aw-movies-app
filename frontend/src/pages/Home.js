@@ -77,6 +77,7 @@ const Home = () => {
                             'Content-Type': 'application/json',
                         }
                     });
+                    fetchFavMovies();
                 } else {
                     console.log('adding movie');
                     fetch('/api/user/favorites', {
@@ -87,8 +88,9 @@ const Home = () => {
                         },
                         body: JSON.stringify({ _id: id }),
                     });
+                    fetchFavMovies();
                 }  
-                fetchFavMovies();
+                
         }
 	}
 
