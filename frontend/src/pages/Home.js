@@ -93,11 +93,11 @@ const Home = () => {
 	}
 
     return (
-        <section>
+        <main>
             <Pagination moviesPerPage={moviesPerPage} totalMovies={movies.length} paginate={paginate} currentPage={currentPage} />
             <Listing addToFavoriteMovies={addToFavoriteMovies} favMovies={favMovies} movies={currentMovies} loading={loading}></Listing>
             <Pagination moviesPerPage={moviesPerPage} totalMovies={movies.length} paginate={paginate} currentPage={currentPage} />
-        </section>
+        </main>
     );
 };
 

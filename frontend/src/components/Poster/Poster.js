@@ -7,12 +7,12 @@ export default function Poster({id, image, title, addToFavoriteMovies }) {
 	const location = useLocation();
 
   return (
-    <div className='poster'>
-      <div onClick={() => addToFavoriteMovies(id)} className="ribbon ribbon-top-left">
+    <div className='movieData-poster'>
+      <div onClick={() => addToFavoriteMovies(id)} className="ribbon">
             {location.pathname !== '/favorites' && (
-            <span>
-                <p className="favButton"></p>
-            </span>
+            <p>
+                <span className="favButton"></span>
+            </p>
             )}
       </div>
       <img src={image} className="poster" alt={title}/>

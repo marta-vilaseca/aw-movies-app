@@ -1,9 +1,11 @@
 import './listing.css';
 import MovieFile from '../MovieFile/MovieFile';
+import Loader from '../Loader/Loader';
 
 function Listing({ movies, favMovies, loading, addToFavoriteMovies }) {
     return (
-        <div className={loading ? 'loader' : 'movieGrid'}>
+        <div className={loading ? 'loaderContainer' : 'movieGrid'}>
+          <Loader></Loader>
           <ul className="movie-list">
             {movies.map(movie => (
               <MovieFile 

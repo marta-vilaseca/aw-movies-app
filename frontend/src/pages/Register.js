@@ -52,44 +52,43 @@ export default function Register() {
 	}
 
 	return (
-		<div class='container'>
-			<div class='container__form'>
-				<form class='form'>
-					<input
-						name='name__input'
-						type='text'
-						placeholder='name'
-						value={inputName}
-						onChange={handleInputChange}
-					/>
-					<input
-						type='email'
-						name='email__input'
-						placeholder='email address'
-						value={inputEmail}
-						onChange={handleInputChange}
-					/>
-					<input
-						type='password'
-						placeholder='password'
-						name='password__input'
-						value={inputPassword}
-						onChange={handleInputChange}
-					/>
-					<input
-						type='password'
-						placeholder='confirm password'
-						name='password__input2'
-						value={inputPassword2}
-						onChange={handleInputChange}
-					/>
-
+	<main>
+		<div class='container__form'>
+			<form class='form'>
+				<input
+					name='name__input'
+					type='text'
+					placeholder='name'
+					value={inputName}
+					onChange={handleInputChange}
+				/>
+				<input
+					type='email'
+					name='email__input'
+					placeholder='email address'
+					value={inputEmail}
+					onChange={handleInputChange}
+				/>
+				<input
+					type='password'
+					placeholder='password'
+					name='password__input'
+					value={inputPassword}
+					onChange={handleInputChange}
+				/>
+				<input
+					type='password'
+					placeholder='confirm password'
+					name='password__input2'
+					value={inputPassword2}
+					onChange={handleInputChange}
+				/>
 					<button type="button" onClick={register}>create</button>
-					<p class='input__message'>
-						Already registered? <Link to='/login'> Login</Link>
-					</p>
-				</form>
-			</div>
+				<p class='input__message'>
+					Already registered? <Link to='/login'> Login</Link>
+				</p>
+			</form>
 		</div>
+	</main>
 	);
 }

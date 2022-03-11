@@ -39,7 +39,6 @@ export default function Login() {
 			headers: {
 				'Content-Type': 'application/json',
 			},
-
 			body: JSON.stringify(data),
 		});
 
@@ -51,33 +50,32 @@ export default function Login() {
 
 
 	return (
-		<div class='container'>
-			<div class='container__form'>
-				<form class='form'>
-					<input
-						type='email'
-						placeholder='email'
-						className='email__input'
-						name='email__input'
-						value={email}
-						onChange={handleInputChange}
-					/>
-					<input
-						type='password'
-						placeholder='password'
-						name='password__input'
-						className='password__input'
-						value={password}
-						onChange={handleInputChange}
-					/>
-
+	<main>
+		<div class='container__form'>
+			<form class='form'>
+				<input
+					type='email'
+					placeholder='email'
+					className='email__input'
+					name='email__input'
+					value={email}
+					onChange={handleInputChange}
+				/>
+				<input
+					type='password'
+					placeholder='password'
+					name='password__input'
+					className='password__input'
+					value={password}
+					onChange={handleInputChange}
+				/>
 					<button type="button" onClick={handleLoginClick}>login</button>
-					<p class='input__message'>
-						Not registered?
-						<Link to='/register'> Register</Link>
-					</p>
-				</form>
-			</div>
+				<p class='input__message'>
+					Not registered?
+					<Link to='/register'> Register</Link>
+				</p>
+			</form>
 		</div>
+	</main>
 	);
 }

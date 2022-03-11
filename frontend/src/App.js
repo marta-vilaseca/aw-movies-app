@@ -18,7 +18,7 @@ import RequireAuth from "./RequireAuth";
 
 function App() {
     return (
-    <main className="App">
+    <>
       <AuthenticationProvider>
         <Router>
           <Header />
@@ -40,7 +40,7 @@ function App() {
           <Footer />
         </Router>
       </AuthenticationProvider>
-    </main>
+    </>
   )
 }
 

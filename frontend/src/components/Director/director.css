@@ -1,12 +1,12 @@
-span.tag {
+span.director {
     display: inline-block;
     margin-right:5px;
 }
 
-span.tag::after {
+span.director::after {
     content: ", "
 }
 
-span.tag:last-child::after {
+span.director:last-child::after {
     content: ""
 }

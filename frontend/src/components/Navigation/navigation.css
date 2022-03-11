@@ -1,6 +1,13 @@
+.main-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .nav-bar {
     list-style-type: none;
-    margin:0 0 2rem;
+    margin:0;
     padding: 0 2rem;
     display:flex;
     font-size: 2rem;
@@ -10,15 +17,29 @@
     margin-right: 1rem; 
 }
 
-.nav-bar li a {
+.nav-bar li a,
+.nav-bar li span {
     display:block;
     padding: 8px 15px;
     background-color: #666;
     color: white;
     text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-bar .message {
+    display:block;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-bar .message strong {
+    color: #F57600;
 }
 
 .nav-bar li a.active {
-    background-color: teal;
+    background-color: #386641;
 }

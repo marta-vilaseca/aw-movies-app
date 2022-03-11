@@ -9,9 +9,9 @@ function Rating({ rating }) {
     };
 
     return (
-        <div className="poster_rating">
-            <p className="poster_num-rating">{rating}</p>
-            <div className="poster_star-rating">
+        <div className="movieData_rating">
+            <span className="movieData_num-rating">{rating}</span>
+            <div className="movieData_star-rating">
                 <div className="stars-off">
                     <div className="stars-on" style={StarStyles()}></div>
                 </div>

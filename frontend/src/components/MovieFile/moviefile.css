@@ -2,60 +2,35 @@
     position: relative;
 }
 
-.poster {
-    width: 100%;
-    object-fit: cover;
-}
-
-.moviecard_rating {
-    width: 100%;
+.movieData {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: 0.3rem 0;
 }
 
-.moviecard_num-rating {
-    display: inline-block;
-    flex-grow:0;
-}
-.moviecard_star-rating {
-    display: inline-block;
-    flex-grow: 1;
-    position:relative;
-    text-align:right;
+.movieData-title {
+    color: #386641;
+    font-size: 1.8rem;
+    line-height: 3rem;
 }
 
-.stars-off {
-    position: relative;
-    display: inline-block;
+.movieData-year {
+    color: #666;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 3rem;
 }
 
-.stars-on {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
+.movieData-year::before {
+    content: '(';
 }
 
-.stars-off::before {
-    /* NO content: "\e131\00a0\e131\00a0\e131\00a0\e131\00a0\e131"; */
-    /* content: "\f145\00a0\f145\00a0\f145\00a0\f145\00a0\f145"; */
-    content: "\f111\00a0\f111\00a0\f111\00a0\f111\00a0\f111";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    /* font-size:2.5rem; */
-    font-size:2rem;
-    color: #333;
+.movieData-year::after {
+    content: ')';
 }
 
-.stars-on::before {
-    content: "\f111\00a0\f111\00a0\f111\00a0\f111\00a0\f111";
-    font-family: "Font Awesome 5 Free";
-    font-style: 'Regular';
-    font-weight: 900;
-    font-size:2rem;
-    color: goldenrod;
-    -webkit-mask-image: url("../../images/grit.png");
-    mask-image: url("../../images/grit.png");
+.movieData-director {
+    font-size: 1.6rem;
+    font-style: italic;
 }

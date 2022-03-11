@@ -1,44 +1,26 @@
-.debug {
-    border:1px solid red;
-}
-.debug2 {
-    border:1px solid green;
-}
-.debug3 {
-    border:1px solid blueviolet;
+/* POSTER image */
+.poster {
+  width: 100%;
+  object-fit: cover;
 }
 
-
+/* POSTER favorite ribbon */
 .ribbon {
     width: 100px;
     height: 100px;
     overflow: hidden;
     position: absolute;
-  }
-  .ribbon span {
-    position: absolute;
-    display: block;
-    width: 160px;
-    padding: 4px 0;
-    background-color: rgba(151, 151, 151, 0.5);
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    text-align:center;
-  }
-
-  .favorite .ribbon span {
-      background-color: gold;
-  }
-
-  span p {
-    display:inline;
-  }
-  
-  /* top left*/
-  .ribbon-top-left {
     top: 0;
     left: 0;
   }
-  .ribbon-top-left span {
+  .ribbon p {
+    position: absolute;
+    display: block;
+    width: 160px;
+    padding: 8px 0;
+    background-color: rgba(151, 151, 151, 0.5);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    text-align:center;
     right: 0;
     top: 0;
     transform: rotate(-45deg);
@@ -60,10 +42,14 @@
     font-weight: 900;
     font-size:2rem;
     color: #111;
-    /* text-shadow: -1px -1px 0px #111, 1px 1px 0px #111, 1px -1px 0px #111, -1px 1px 0px #111; */
+}
+
+/* POSTER favorited (active) */
+.favorite .ribbon p {
+  background-color: #FFAB5C;
 }
 
 .favorite .favButton::before {
     font-weight: 900;
-    color: tomato;
+    color: #F57600;
 }

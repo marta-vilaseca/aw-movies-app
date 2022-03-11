@@ -2,6 +2,7 @@ import { Link, useLocation} from 'react-router-dom';
 import './moviefile.css';
 import Poster from '../Poster/Poster';
 import Tag from '../Tag/Tag';
+import Director from '../Director/Director';
 import Rating from '../Rating/Rating';
 
   
@@ -18,11 +19,23 @@ export default function MovieFile({ favMovies, addToFavoriteMovies, movie }) {
 				title={movie.title}>
       </Poster>
 
-      <Link to="#" activeClassName="active" className="poster__title">{movie.title}</Link>
-      {movie.director}, {movie.year}         
-      <Rating rating={movie.rate}></Rating>
+      {/* <Link to="#" activeClassName="active" className="poster__title">{movie.title}</Link> */}
+      <div className="movieData">
+        <h3 className="movieData-title">{movie.title}</h3>
+        <div className="movieData-year">{movie.year}</div> 
+      </div>
+      
+      <div className="movieData-director">
+        {movie.director.map((dire) => (
+        <Director key={dire} item={dire}></Director>
+        ))}
+      </div>
+              
+      <div className="movieData">
+        <Rating rating={movie.rate}></Rating>
+      </div>
           
-      <div className="poster__categories">
+      <div className="movieData-categories">
         {movie.categories.map((category) => (
           <Tag key={category} item={category}></Tag>
         ))}

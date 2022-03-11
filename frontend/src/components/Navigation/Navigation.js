@@ -14,21 +14,27 @@ function Navigation() {
 	}
   
   return (
-    <ul className="nav-bar">
-        <li><NavLink to="/">All Movies</NavLink></li>
-        {!authData && (
-				<li><NavLink to='/register'>Register</NavLink></li>
-			  )}
-			  {!authData && (
-				<li><NavLink to='/login'>Login</NavLink></li>
-			  )}
-			  {authData && (
-				<li><NavLink to='/favorites'>Favorites</NavLink></li>
-			  )}
-			  {authData && (
-				<li><span onClick={handleLogout}>Logout</span></li>
-			  )}
-    </ul>
+    <nav className="main-nav">
+		<ul className="nav-bar">
+			<li><NavLink to="/">All Movies</NavLink></li>
+		{!authData && (
+			<li><NavLink to='/register'>Register</NavLink></li>
+		)}
+		{!authData && (
+			<li><NavLink to='/login'>Login</NavLink></li>
+		)}
+		</ul>
+		
+		
+		{authData && (
+		<ul className="nav-bar">
+			<li className="message">Welcome!</li>
+			<li><NavLink to='/favorites'>Favorites</NavLink></li>
+			<li><span onClick={handleLogout}>Logout</span></li>
+		</ul>
+		)}
+		
+	</nav>
   );
 }
 

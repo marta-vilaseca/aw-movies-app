@@ -27,10 +27,10 @@ const Favorites = () => {
     console.table(favMovies);
     
     return (
-        <section>
+        <main>
             <h2>Favorites</h2>
             <Listing movies={favMovies} loading={loading}></Listing>
-        </section>
+        </main>
     );
 };
 
