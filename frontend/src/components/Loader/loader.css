@@ -5,13 +5,16 @@
 .loaderContainer {
 	display: flex;
 	justify-content: center;
-	width: 100vw;
+	width: 100%;
 }
 
 .loaderContainer .loader {
     display: flex;
     justify-content: center;
     padding: 6rem 0;
+    margin: 10rem auto;
+    text-align:center;
+    width: 100%;
 }
 
 @keyframes rotate {

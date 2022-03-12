@@ -7,6 +7,7 @@ const Favorites = () => {
     
     // FAVORITES: fetching
     function fetchFavMovies() {
+        setLoading(true);
         fetch('/api/user/favorites', {
             method: 'GET',
             credentials: 'include',
@@ -17,6 +18,7 @@ const Favorites = () => {
             .then(response => response.json())
             .then(data => {
                 setFavMovies(data.favorites);
+                setLoading(false);
             });
     }
 

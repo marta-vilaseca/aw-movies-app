@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Listing from '../components/Listing/Listing';
 import Pagination from '../components/Pagination/Pagination';
-import { useLocation, useNavigate } from 'react-router-dom';
+// import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../AuthProvider';
 
 const Home = () => {
 	const { authData } = useAuthentication();
 	const navigate = useNavigate();  
-    const location = useLocation();
+    // const location = useLocation();
 
     const [movies, setMovies] = useState([]);
     const [favMovies, setFavMovies] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [moviesPerPage] = useState(10);
+    const isProcessing = useRef(false);
     // const [filterMovies, setFilterMovies] = useState([]);
 
     // Fetching movies
@@ -61,36 +63,37 @@ const Home = () => {
     
     
     // FAVORITES: Add
-    function addToFavoriteMovies(id) {
+    async function addToFavoriteMovies(id) {
 		if (!authData) {
 			navigate('/login', { replace: true });
 		}
 
-        if (authData) {           
-                // console.log(id);
-                if(favMovies.some(item => item._id === id)) {
-                    console.log('deleting movie')
-                    fetch('/api/user/favorites/' + id, {
-                        method: 'DELETE',
-                        credentials: 'include',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    });
-                    fetchFavMovies();
-                } else {
-                    console.log('adding movie');
-                    fetch('/api/user/favorites', {
-                        method: 'POST',
-                        credentials: 'include',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ _id: id }),
-                    });
-                    fetchFavMovies();
-                }  
-                
+        if (authData && !isProcessing.current) {           
+            // console.log(id);
+            isProcessing.current = true;
+            if(favMovies.some(item => item._id === id)) {
+                // console.log('deleting movie')
+                await fetch('/api/user/favorites/' + id, {
+                    method: 'DELETE',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                fetchFavMovies();
+            } else {
+                // console.log('adding movie');
+                await fetch('/api/user/favorites', {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ _id: id }),
+                });
+                fetchFavMovies();
+            }
+            isProcessing.current = false;            
         }
 	}
 

@@ -24,6 +24,7 @@ const AuthenticationProvider = ({ children }) => {
 
 	useEffect(() => {
 		getLoggedUser();
+		// eslint-disable-next-line
 	}, []);
 
 	const login = data => {

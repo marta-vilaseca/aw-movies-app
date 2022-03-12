@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.94c19421.css",
+    "main.js": "/static/js/main.ff786d12.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/grit.png": "/static/media/grit.abd8bd62103263adcfb7.png",
+    "static/media/logo.svg": "/static/media/logo.1a973401121076041812a8cd6f22fa64.svg",
+    "static/media/florida_project_phase_two-webfont.woff": "/static/media/florida_project_phase_two-webfont.05ed45ff9f30c2fec108.woff",
+    "static/media/florida_project_phase_one-webfont.woff": "/static/media/florida_project_phase_one-webfont.000a82ba8b2c34911ea0.woff",
+    "static/media/florida_project_phase_two-webfont.woff2": "/static/media/florida_project_phase_two-webfont.39fcfad7d030fe554c65.woff2",
+    "static/media/florida_project_phase_one-webfont.woff2": "/static/media/florida_project_phase_one-webfont.e3f89a9e4b8f1aecb71a.woff2",
+    "index.html": "/index.html",
+    "main.94c19421.css.map": "/static/css/main.94c19421.css.map",
+    "main.ff786d12.js.map": "/static/js/main.ff786d12.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94c19421.css",
+    "static/js/main.ff786d12.js"
+  ]
+}

@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useAuthentication } from '../../AuthProvider';
 import './navigation.css';
 
 function Navigation() {
   // Hooks
 	const { authData, logout } = useAuthentication();
-	const navigate = useNavigate();
+	// const navigate = useNavigate();
   
   // Handlers
 	function handleLogout() {
