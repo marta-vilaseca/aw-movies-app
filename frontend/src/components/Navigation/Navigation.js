@@ -25,10 +25,9 @@ function Navigation() {
 		)}
 		</ul>
 		
-		
 		{authData && (
 		<ul className="nav-bar">
-			<li className="message">Welcome!</li>
+			<li className="message">Welcome <strong>{authData.name}</strong>!</li>
 			<li><NavLink to='/favorites'>Favorites</NavLink></li>
 			<li><span onClick={handleLogout}>Logout</span></li>
 		</ul>

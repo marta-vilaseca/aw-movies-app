@@ -28,7 +28,7 @@ const AuthenticationProvider = ({ children }) => {
 	}, []);
 
 	const login = data => {
-		setAuthData({ data });
+		setAuthData(data);
 	};
 
 	const logout = () => {
