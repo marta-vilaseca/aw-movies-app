@@ -1,7 +1,8 @@
 {
-    "name": "Movies-api",
+    "name": "movies-app",
     "version": "0.0.0",
     "scripts": {
-        "build": "cd ./backend && npm i && npm run build"
+        "build": "cd ./backend && npm i && npm run build",
+        "start": "cd ./backend && npm start"
     }
 }
