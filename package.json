@@ -1,0 +1,7 @@
+{
+    "name": "Movies-api",
+    "version": "0.0.0",
+    "scripts": {
+        "heroku-prebuild": "cd ./backend"
+    }
+}
